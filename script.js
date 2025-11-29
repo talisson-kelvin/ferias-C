@@ -29,7 +29,7 @@ const claraContent = {
 
     brought: ["Alegria pura.", "Paz e leveza.", "Exemplo de foco."],
     learned: ["Que a fé move montanhas.", "A importância da educação em qualquer papo.", "Que ser extrovertido é uma força."],
-    top5: ["Extroversão Magnética", "Gentileza Inegável", "Foco e Determinação", "Alto Astral Constante", "Amizade Sincera"]
+    top5: ["Extrovertida", "Gentileza Inegável", "Foco e Determinação", "Alto Astral Constante", "Amizade Sincera"]
 };
 
 let currentDialogue = 0;
@@ -140,3 +140,4 @@ window.addEventListener('DOMContentLoaded', () => {
         secretBtn.addEventListener('click', revealSecret);
     }
 });
+
