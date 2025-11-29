@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clara | Retrospectiva Especial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a71c89be62.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- TELA DE INTRODUÇÃO -->
+<div id="intro-screen" class="intro-bg">
+    <div class="flex flex-col items-center justify-center p-8 text-center max-w-sm w-full">
+
+        <div id="character-avatar" class="character-light transition-opacity duration-500 mb-6 p-4">
+            <i class="fas fa-chess-knight text-7xl text-white mb-2 transform rotate-12"></i>
+            <i class="fas fa-flag-checkered text-5xl text-red-600"></i>
+        </div>
+
+        <div class="bg-gray-800 p-5 rounded-xl shadow-lg border-2 border-red-600 mb-8 w-full">
+            <p id="dialogue-text" class="text-white text-lg font-medium"></p>
+        </div>
+
+        <button id="next-button"
+            class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform">
+            Próximo
+        </button>
+    </div>
+</div>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<div id="main-container" class="container-main min-h-screen pt-12 opacity-0">
+    <main class="max-w-4xl mx-auto px-4">
+
+        <!-- Cabeçalho -->
+        <header class="bg-red-800/10 p-8 rounded-xl shadow-2xl mb-12 border-b-4 border-red-600">
+            <h1 class="text-6xl font-extrabold text-red-600 tracking-tighter">CLARA</h1>
+            <p class="text-xl font-light text-gray-300 mt-2 border-b border-gray-700 pb-4">
+                "Você ilumina qualquer lugar que chega."
+            </p>
+            <p class="text-sm text-gray-500 mt-4">Retrospectiva do nosso espelho – últimos 6 meses</p>
+        </header>
+
+        <!-- Navegação -->
+        <nav class="flex justify-center flex-wrap gap-2 mb-10">
+            <a href="#quem" class="nav-btn">Quem Você Foi</a>
+            <a href="#momentos" class="nav-btn">Momentos Marcantes</a>
+            <a href="#retrospectiva" class="nav-btn">Linha do Tempo</a>
+            <a href="#mensagem" class="nav-btn">Mensagem</a>
+        </nav>
+
+        <!-- Seções -->
+        <section id="quem" class="mb-16 p-6 metallic-card rounded-lg">
+            <h2 class="section-title">Quem você foi nesses meses</h2>
+
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-star text-7xl text-yellow-400 card-frame p-4 rounded-full"></i>
+                </div>
+
+                <div>
+                    <p class="text-lg mb-4 text-gray-300">
+                        Desde cedo dava pra ver que você era do tipo que contagia tudo ao redor. Sua presença é leve, mas sua energia é imensa. Você é a definição de bom humor misturado com aquela elegância sutil.
+                    </p>
+
+                    <div id="tags-container" class="flex flex-wrap gap-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="momentos" class="mb-16">
+            <h2 class="section-title text-center">Momentos Marcantes</h2>
+            <div id="moments-container" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+        </section>
+
+        <section id="marcaram" class="mb-16 bg-gray-900 p-8 rounded-xl border-t-4 border-red-600">
+            <h2 class="section-title text-center mb-8">Coisas que marcaram no nosso espelho</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="sub-title"><i class="fas fa-arrow-down-left-and-arrow-up-right-to-center mr-2"></i> Você trouxe</h3>
+                    <ul id="brought-list" class="space-y-3"></ul>
+                </div>
+
+                <div>
+                    <h3 class="sub-title"><i class="fas fa-graduation-cap mr-2"></i> Eu aprendi</h3>
+                    <ul id="learned-list" class="space-y-3"></ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="top5" class="mb-16">
+            <h2 class="section-title text-center">Top 5 Características Mais Fortes</h2>
+
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                <ol id="top5-list" class="space-y-3 list-decimal list-inside text-gray-300"></ol>
+            </div>
+        </section>
+
+        <section id="retrospectiva" class="mb-16">
+            <h2 class="section-title text-center">Linha do Tempo da Nossa Jornada</h2>
+
+            <div class="relative pl-6">
+                <div class="absolute left-[11px] top-0 bottom-0 w-0.5 bg-gray-700"></div>
+                <div id="timeline-container"></div>
+            </div>
+        </section>
+
+        <section id="galeria" class="mb-16">
+            <h2 class="section-title text-center">Galeria de Vibes</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="card-frame p-4 rounded-lg text-center bg-gray-800">
+                    <i class="fas fa-car text-5xl text-red-500 mb-2"></i>
+                    <p class="text-sm text-gray-400">Velocidade e Foco</p>
+                </div>
+
+                <div class="card-frame p-4 rounded-lg text-center bg-gray-800">
+                    <i class="fas fa-heart text-5xl text-white mb-2"></i>
+                    <p class="text-sm text-gray-400">Coração no Lugar Certo</p>
+                </div>
+
+                <div class="card-frame p-4 rounded-lg text-center bg-gray-800">
+                    <i class="fas fa-cross text-5xl text-yellow-500 mb-2"></i>
+                    <p class="text-sm text-gray-400">Apoio e Fé</p>
+                </div>
+
+                <div class="card-frame p-4 rounded-lg text-center bg-gray-800">
+                    <i class="fas fa-trophy text-5xl text-yellow-600 mb-2"></i>
+                    <p class="text-sm text-gray-400">Vitórias Diárias</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mensagem" class="mb-16">
+            <div class="p-8 rounded-xl bg-red-600/10 border-4 border-red-600 shadow-xl">
+                <h2 class="text-4xl font-extrabold text-red-400 mb-4">Mensagem Especial</h2>
+                <blockquote class="text-xl italic text-gray-200 leading-relaxed">
+                    "Clara, você é aquela pessoa que faz bem só por existir perto. Obrigado por todos os dias leves, pela energia boa e pela amizade que continua crescendo. Tenho certeza que ainda vamos criar muitas histórias boas. Adoro sua companhia!"
+                </blockquote>
+            </div>
+        </section>
+
+    </main>
+<section id="extras" class="mb-16">
+    <h2 class="section-title text-center">Extras e Conquistas!</h2>
+
+    <div class="extras-grid grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <!-- Conquista -->
+        <div class="extras-card accent-yellow">
+            <i class="fas fa-medal text-4xl mb-2"></i>
+            <p class="font-bold text-lg text-white">Conquista: Riu todo dia</p>
+            <p class="text-sm text-gray-400 mt-2">Manteve o bom humor 100% do tempo.</p>
+        </div>
+
+        <!-- Ranking -->
+        <div class="extras-card accent-red">
+            <i class="fas fa-chart-line text-4xl mb-2"></i>
+            <p class="font-bold text-lg text-white">Ranking: Mais Sociável</p>
+            <p class="text-sm text-gray-400 mt-2">Sua energia é imbatível!</p>
+        </div>
+
+        <!-- Frase Secreta -->
+        <div class="extras-card accent-white flex flex-col items-center justify-center">
+            <button id="secret-button" class="secret-btn" aria-haspopup="dialog" aria-controls="secret-note">
+                Frase Secreta 💡
+            </button>
+            <p id="secret-hint" class="text-xs text-gray-500 mt-3">Clique para revelar (Verifique o console do navegador)</p>
+        </div>
+    </div>
+</section>
+
+    <footer class="text-center py-8 border-t border-gray-700 mt-12">
+        <p class="text-gray-500 text-sm">Criado especialmente para você ❤️</p>
+        <p class="text-xs text-gray-700">2024</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
