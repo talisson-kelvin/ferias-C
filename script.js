@@ -19,15 +19,15 @@ const claraContent = {
     ],
 
     moments: [
-        { icon: "fas fa-flag-checkered", text: "Conversas que parecem terminar com uma bandeirada." },
-        { icon: "fas fa-laugh-squint", text: "Sua habilidade de rir de si mesma e alegrar o dia." },
-        { icon: "fas fa-hands-praying", text: "Sua fé discreta, mas que inspira." },
+        { icon: "fas fa-flag-checkered", text: "Conversas que me fizeram entender como é ter uma amiga." },
+        { icon: "fas fa-laugh-squint", text: "Sua habilidade de alegrar o dia." },
+        { icon: "fas fa-hands-praying", text: "Sua fé que inspira." },
         { icon: "fas fa-bolt", text: "O alto astral que contagia todos ao redor." },
         { icon: "fas fa-sun", text: "A leveza com que lida com os desafios." },
         { icon: "fas fa-comment-dots", text: "Sua pontualidade nas respostas e atenção." }
     ],
 
-    brought: ["Alegria pura.", "Paz e leveza.", "Exemplo de foco."],
+    brought: ["Alegria pura.", "Paz e leveza.", "Exemplo de fé."],
     learned: ["Que a fé move montanhas.", "A importância da educação em qualquer papo.", "Que ser extrovertido é uma força."],
     top5: ["Extrovertida", "Gentileza Inegável", "Foco e Determinação", "Alto Astral Constante", "Amizade Sincera"]
 };
@@ -35,7 +35,6 @@ const claraContent = {
 let currentDialogue = 0;
 let isLastDialogue = false;
 
-// Tela de introdução
 function nextDialogue() {
     const text = document.getElementById("dialogue-text");
     const btn = document.getElementById("next-button");
@@ -140,4 +139,5 @@ window.addEventListener('DOMContentLoaded', () => {
         secretBtn.addEventListener('click', revealSecret);
     }
 });
+
 
